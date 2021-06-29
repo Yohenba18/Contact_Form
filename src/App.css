@@ -15,7 +15,7 @@
 }
 
 .contactMe > Form {
-  padding: 35px 165px;
+  padding: 25px 165px;
   display: flex;
   flex-direction: column;
 }
@@ -23,23 +23,27 @@
 .contactMe > Form > h1{
   font-size: 49px;
   font-weight: bold;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+}
+
+.contactMe >  Form > input, textarea{
+  font-size: 15px;
+  padding-left:27px;
+  color:#999999;
+  background-color: #2E2F33;
 }
 
 .contactMe >  Form > input{
-  margin-bottom: 27px;
   height: 58px;
-  padding-left:37px;
-  color:#999999;
-  background-color: #2E2F33;
+  margin-bottom: 27px;
 }
 .contactMe >  Form > textarea {
+  /* overflow: scroll; */
   height: 136px;
-  color:#999999;
-  background-color: #2E2F33;
-  margin-bottom: 27px;
-  padding-left:37px;
   padding-top: 19px;
+  padding-right: 37px;
+  margin-bottom: 19px;
+
 }
 
 
