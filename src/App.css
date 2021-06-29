@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+.app {
+  display: grid;
+  place-items: center;
+  background-color: #202020;
+  color: white;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.contactMe {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #1a1a1a;
+  width: 1016px;
+  height: 632px;
+}
+
+.contactMe > Form {
+  padding: 35px 165px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactMe > Form > h1{
+  font-size: 49px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.contactMe >  Form > input{
+  margin-bottom: 27px;
+  height: 58px;
+  padding-left:37px;
+  color:#999999;
+  background-color: #2E2F33;
+}
+.contactMe >  Form > textarea {
+  height: 136px;
+  color:#999999;
+  background-color: #2E2F33;
+  margin-bottom: 27px;
+  padding-left:37px;
+  padding-top: 19px;
+}
+
+
+.contactMe >  Form > button{
+  width: 173px;
+  height: 47px;
+  border-radius: 30px;
+  background-color:#5BB85A;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-self: center;
 }
