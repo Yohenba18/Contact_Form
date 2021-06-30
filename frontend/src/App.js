@@ -1,28 +1,22 @@
 import React, { useState } from "react";
 import "./App.css";
 
-function App() {
-  const [state, setState] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+const App = () => {
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    console.log(state.name);
+  const state = {name, email, subject, message};
+  const sendEmail = (event) => {
+    event.preventDefault();
+    alert(state);
+    // code to trigger Sending email
+    setName("");
+    setSubject("");
+    setEmail("");
+    setMessage("");
   };
-
-  const stateChange = (e) => {
-    const { name, value } = e.target;
-
-    setState({
-      ...state,
-      [name]: value
-    });
-  };
-
   return (
     <div className="app">
       <div className="contactMe">
@@ -30,26 +24,26 @@ function App() {
           <h1>Let's connect</h1>
           <input
             type="text"
-            placeholder="Full Name"
-            value={state.name}
-            onChange={stateChange}
+            value={name}
+            placeholder="Full name"
+            onChange={(e) => setName(e.target.value)}
           />
           <input
             type="text"
-            value={state.email}
-            onChange={stateChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Email ID"
           />
           <input
             type="text"
-            value={state.subject}
-            onChange={stateChange}
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
             placeholder="Subject"
           />
           <textarea
             type="text"
-            value={state.message}
-            onChange={stateChange}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             placeholder="Type your message here..."
           />
           <button onClick={sendEmail} type="submit">
