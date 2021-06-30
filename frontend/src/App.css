@@ -28,7 +28,7 @@
 
 .contactMe >  Form > input, textarea{
   outline-color: aquamarine;
-  font-size: 15px;
+  font-size: 18px;
   padding-left:27px;
   color:white;
   background-color: #2E2F33;
@@ -45,9 +45,7 @@
   padding-right: 37px;
   margin-bottom: 19px;
   resize: none;
-
 }
-
 
 .contactMe >  Form > button{
   width: 173px;
