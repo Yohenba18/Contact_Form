@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const transporter = require('./config.js');
 
 const buildPath = path.join(__dirname, "..", "build");
 
