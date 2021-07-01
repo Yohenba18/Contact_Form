@@ -56,3 +56,10 @@
   color: white;
   align-self: center;
 }
+
+.success{
+  color: green !important;
+}
+.error{
+  color: red !important;
+}

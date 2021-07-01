@@ -17,7 +17,10 @@ const App = () => {
       .post("/send", { ...state })
       .then((response) => setResult(response.data))
       .catch(() => {
-        setResult({ success: false, message: 'Something went wrong. Try again later'});
+        setResult({
+          success: false,
+          message: "Something went wrong. Try again later",
+        });
       });
     setName("");
     setSubject("");
@@ -57,6 +60,11 @@ const App = () => {
           <button onClick={sendEmail} type="submit">
             Submit
           </button>
+          {result && (
+            <p className={`${result.sucess ? "success" : "error"}`}>
+            {result.message}
+            </p>
+          )}
         </form>
       </div>
     </div>
