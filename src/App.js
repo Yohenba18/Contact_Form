@@ -13,7 +13,6 @@ const App = () => {
   const sendEmail = (event) => {
     event.preventDefault();
     alert(state);
-    // code to trigger Sending email
 
     axios
       .sendEmail("/send", { ...state })
