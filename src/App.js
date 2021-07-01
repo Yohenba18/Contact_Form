@@ -1,18 +1,29 @@
 import React, { useState } from "react";
 import "./App.css";
+import axios from "axios";
 
 const App = () => {
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [result, setResult] = useState("");
 
-
-  const state = {name, email, subject, message};
+  const state = { name, email, subject, message };
   const sendEmail = (event) => {
     event.preventDefault();
     alert(state);
     // code to trigger Sending email
+
+    axios
+      .sendEmail("/send", { ...state })
+      .then((response) => setResult(response.data))
+      .catch(() => {
+        setResult({
+          success: false,
+          message: "Something went wrong. Try again later",
+        });
+      });
     setName("");
     setSubject("");
     setEmail("");
@@ -54,6 +65,6 @@ const App = () => {
       </div>
     </div>
   );
-}
+};
 
 export default App;
