@@ -10,24 +10,21 @@ const App = () => {
   const [result, setResult] = useState(null);
 
   const state = { name, email, subject, message };
+
   const sendEmail = (event) => {
     event.preventDefault();
-    alert(state);
-
     axios
-      .sendEmail("/send", { ...state })
+      .post("/send", { ...state })
       .then((response) => setResult(response.data))
       .catch(() => {
-        setResult({
-          success: false,
-          message: "Something went wrong. Try again later",
-        });
+        setResult({ success: false, message: 'Something went wrong. Try again later'});
       });
     setName("");
     setSubject("");
     setEmail("");
     setMessage("");
   };
+
   return (
     <div className="app">
       <div className="contactMe">
