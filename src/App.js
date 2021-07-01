@@ -7,7 +7,7 @@ const App = () => {
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState(null);
 
   const state = { name, email, subject, message };
   const sendEmail = (event) => {
