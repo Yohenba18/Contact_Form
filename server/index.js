@@ -27,7 +27,7 @@ app.post('/send', (req, res) => {
       `
     };
 
-    transporter.sendMail(mailOptions, (err, info)=> {
+    transporter.sendMail(mailOptions, function (err, info) {
       if (err) {
         res.status(500).send({
           success: false,

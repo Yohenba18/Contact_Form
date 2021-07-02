@@ -61,7 +61,7 @@ const App = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Type your message here..."
-            required\
+            required
           />
           <button onClick={sendEmail} type="submit">
             Submit
