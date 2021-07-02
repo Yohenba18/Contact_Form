@@ -50,6 +50,7 @@
 .contactMe >  Form > button{
   width: 173px;
   height: 47px;
+  cursor: pointer;
   font-size:20px;
   border-radius: 30px;
   background-color:#5BB85A;

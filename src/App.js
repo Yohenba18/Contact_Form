@@ -11,11 +11,13 @@ const App = () => {
 
   const state = { name, email, subject, message };
 
-  const sendEmail = (event) => {
+  const sendEmail = async (event) => {
     event.preventDefault();
-    axios
+    await axios
       .post("/send", { ...state })
-      .then((response) => setResult(response.data))
+      .then((response) => {
+        setResult(response.data);
+      })
       .catch(() => {
         setResult({
           success: false,
@@ -38,31 +40,35 @@ const App = () => {
             value={name}
             placeholder="Full name"
             onChange={(e) => setName(e.target.value)}
+            required
           />
           <input
-            type="text"
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email ID"
+            required
           />
           <input
             type="text"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
             placeholder="Subject"
+            required
           />
           <textarea
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Type your message here..."
+            required\
           />
           <button onClick={sendEmail} type="submit">
             Submit
           </button>
           {result && (
             <p className={`${result.sucess ? "success" : "error"}`}>
-            {result.message}
+              {result.message}
             </p>
           )}
         </form>
