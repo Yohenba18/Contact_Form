@@ -11,23 +11,24 @@ const App = () => {
 
   const state = { name, email, subject, message };
 
-  const sendEmail = async (event) => {
+  const sendEmail = event => {
     event.preventDefault();
-    await axios
-      .post("/send", { ...state })
-      .then((response) => {
+    axios
+      .post('/send', { ...state })
+      .then(response => {
         setResult(response.data);
+        setName("");
+        setSubject("");
+        setEmail("");
+        setMessage("");
       })
-      .catch(() => {
+      .catch((error) => {
+        console.log('error', error);
         setResult({
           success: false,
-          message: "Something went wrong. Try again later",
+          message: 'Something went wrong. Try again later'
         });
       });
-    setName("");
-    setSubject("");
-    setEmail("");
-    setMessage("");
   };
 
   return (
@@ -38,6 +39,7 @@ const App = () => {
           <input
             type="text"
             value={name}
+            name="name"
             placeholder="Full name"
             onChange={(e) => setName(e.target.value)}
             required
@@ -45,6 +47,7 @@ const App = () => {
           <input
             type="email"
             value={email}
+            name="email"
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email ID"
             required
@@ -52,6 +55,7 @@ const App = () => {
           <input
             type="text"
             value={subject}
+            name="subject"
             onChange={(e) => setSubject(e.target.value)}
             placeholder="Subject"
             required
@@ -59,6 +63,7 @@ const App = () => {
           <textarea
             type="text"
             value={message}
+            name="message"
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Type your message here..."
             required
